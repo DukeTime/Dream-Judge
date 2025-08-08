@@ -1,19 +1,48 @@
 namespace DefaultNamespace.DialogueSystem
 {
-    using System.Collections.Generic;
     using UnityEngine;
-    
-    [CreateAssetMenu(fileName = "NewDialogue", menuName = "Dialogue System/Dialogue Data")]
-    public class DialogueData : ScriptableObject
+    using System.Collections.Generic;
+
+    [System.Serializable]
+    public class DialogPhrase
     {
-        public string entryPointID;
-        public List<DialogueBranch> branches = new List<DialogueBranch>();
-        
-        public DialogueBranch GetBranch(int index)
+        public string characterId;
+        public string emotion;
+        [TextArea(3, 10)] public string text;
+        public string textStyle;
+    }
+
+    
+    [System.Serializable]
+    public class DialogData
+    {
+        public List<DialogPhrase> phrases;
+    }
+
+    
+    [CreateAssetMenu(fileName = "NewCharacter", menuName = "Dialogue System/Character Data")]
+    public class CharacterData : ScriptableObject
+    {
+        public string characterId;
+        public string displayName;
+        public Sprite defaultPortrait;
+    
+        [System.Serializable]
+        public class EmotionPortrait
         {
-            if (index >= 0 && index < branches.Count)
-                return branches[index];
-            return null;
+            public string emotionId;
+            public Sprite portrait;
+        }
+    
+        public EmotionPortrait[] emotionPortraits;
+    
+        public Sprite GetPortraitForEmotion(string emotion)
+        {
+            foreach (var ep in emotionPortraits)
+            {
+                if (ep.emotionId == emotion) return ep.portrait;
+            }
+            return defaultPortrait;
         }
     }
 }

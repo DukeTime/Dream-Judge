@@ -1,6 +1,5 @@
 using System;
 using DefaultNamespace;
-using DefaultNamespace.DialogueSystem;
 using Map.Player;
 using UnityEngine;
 using Zenject;
@@ -13,7 +12,6 @@ public class PlayerInputHandler : MonoBehaviour
     public bool IsRunning { get; private set; }
     public bool InteractPressed { get; private set; }
 
-    public DialogueTrigger dt;
     
     
     private GlobalConfig _config;
@@ -39,10 +37,6 @@ public class PlayerInputHandler : MonoBehaviour
 
         IsRunning = Input.GetKey(KeyCode.LeftShift) && TestMode;
         InteractPressed = Input.GetKeyDown(KeyCode.E);
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log(dt.requiredFlag);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

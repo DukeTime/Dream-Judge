@@ -747,14 +747,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1424251163113335597, guid: b2c0c97514e49b34495082a48af0a6ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 415679336}
+      addedObject: {fileID: 415679340}
   m_SourcePrefab: {fileID: 100100000, guid: b2c0c97514e49b34495082a48af0a6ba, type: 3}
 --- !u!1 &415679335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1424251163113335597, guid: b2c0c97514e49b34495082a48af0a6ba, type: 3}
   m_PrefabInstance: {fileID: 415679334}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &415679336
+--- !u!114 &415679340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -763,11 +763,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 415679335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb812c65cd504107a966a349fb51fb72, type: 3}
+  m_Script: {fileID: 11500000, guid: e08e7524cc5748aeabdf328163534654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 0a02e197ed71b1f48b0eba6bf5e00c63, type: 2}
-  requiredFlag: Player
 --- !u!1 &463231385
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,13 +943,14 @@ GameObject:
   - component: {fileID: 897723830}
   - component: {fileID: 897723829}
   - component: {fileID: 897723828}
+  - component: {fileID: 897723832}
   m_Layer: 5
   m_Name: DialogueCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &897723828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,13 +1030,30 @@ RectTransform:
   - {fileID: 2136843440}
   - {fileID: 1525595568}
   - {fileID: 253905887}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1075006031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &897723832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897723827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97689d752bfa435ab505bb4d804990e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogPanel: {fileID: 897723827}
+  characterPortrait: {fileID: 2136843441}
+  characterNameText: {fileID: 463231387}
+  dialogText: {fileID: 823331811}
+  textStyles: []
 --- !u!1 &1044666583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1131,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044666583}
   m_CullTransparentMesh: 1
+--- !u!1 &1075006029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075006031}
+  - component: {fileID: 1075006030}
+  m_Layer: 0
+  m_Name: DialogueSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1075006030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075006029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab6cdde81f642b9a6ac6d13a9563b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogsFolder: DB/Dialogues
+  charactersFolder: DB/DialogueChars
+--- !u!4 &1075006031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075006029}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 897723831}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1326529988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1811,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1688641776693544370, guid: caa59fd94d0790d49852d33f3320ba0b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1762,5 +1826,5 @@ SceneRoots:
   - {fileID: 43499240}
   - {fileID: 415679334}
   - {fileID: 4909633605916088616}
-  - {fileID: 897723831}
   - {fileID: 1326529991}
+  - {fileID: 1075006031}

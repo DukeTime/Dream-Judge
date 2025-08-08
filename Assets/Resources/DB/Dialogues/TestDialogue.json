@@ -1,0 +1,16 @@
+{
+  "phrases": [
+    {
+      "characterId": "npc_wizard",
+      "emotion": "happy",
+      "text": "Приветствую, путник! Как твои дела?",
+      "textStyle": "default"
+    },
+    {
+      "characterId": "player",
+      "emotion": "neutral",
+      "text": "Неплохо, спасибо что спросил!",
+      "textStyle": "player"
+    }
+  ]
+}
